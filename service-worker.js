@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/luxbar2-experiment/precache-manifest.13bcaab24a8a57717e3c5ef1658c6749.js"
+  "/luxbar2-experiment/precache-manifest.9a178b1b166e8faa8a511a9ff5a063ae.js"
 );
 
 workbox.clientsClaim();

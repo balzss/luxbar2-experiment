@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/luxbar2-experiment/static/css/main.41bf0fbe.chunk.css"
   },
   {
-    "revision": "c454be53f9e8e2997c8a5e2435820fed",
+    "revision": "271868c3535b0ca554fe6510c0ace565",
     "url": "/luxbar2-experiment/index.html"
   }
 ];
