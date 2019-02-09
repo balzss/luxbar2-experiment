@@ -1,0 +1,4 @@
+- Side panel layout (dashboard like)
+- More active-item option (e.g. line at bottom/side)
+- Dropdowns
+- Color options
