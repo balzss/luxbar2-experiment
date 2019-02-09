@@ -1,0 +1,194 @@
+$nav-height: 3.5em;
+$padding: 1.5rem;
+
+$theme-cyan-bg: #006064;
+$theme-cyan-fg: #ffffff;
+$theme-cyan-active: #ff0000;
+
+.luxbar *, .luxbar *:before, .luxbar *:after {
+  box-sizing: border-box;
+}
+
+.luxbar {
+    background-color: $theme-cyan-bg;
+    color: $theme-cyan-fg;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: $nav-height;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.luxbar-shadow1 {
+    filter: drop-shadow(0 2px 2px #424242);
+}
+
+#luxbar-checkbox {
+    display: none;
+}
+
+.luxbar-hamburger {
+    display: none;
+}
+
+.luxbar a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.luxbar-brand {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 $padding;
+    font-size: 1.2rem;
+    background-color: inherit;
+    flex: 1;
+}
+
+.luxbar-items {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: inherit;
+    background-color: inherit;
+}
+
+.luxbar-items li a {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding: 0 $padding;
+    transition: background-color 0.2s ease;
+}
+
+.luxbar-items li a:hover, .luxbar-items li a.luxbar-active {
+    background-color: #00838f;
+}
+
+@media (max-width: 900px) {
+    .luxbar-hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: $nav-height;
+        background-color: inherit;
+        height: $nav-height;
+    }
+
+    .luxbar-hamburger span, .luxbar-hamburger span::before, .luxbar-hamburger span::after {
+        display: block;
+        height: 2px;
+        width: 1.5rem;
+        border-radius: 2px;
+        transition: all 0.5s ease; 
+    }
+
+    #luxbar-checkbox:checked ~ .luxbar-hamburger span {
+        background-color: transparent;
+    }
+
+    #luxbar-checkbox:checked ~ .luxbar-hamburger span::before, #luxbar-checkbox:checked ~ .luxbar-hamburger span::after {
+        margin-top: 0; 
+    }
+
+    .luxbar-hamburger span::before, .luxbar-hamburger span::after {
+        content: '';
+        position: absolute; 
+    }
+
+    .luxbar-hamburger span::before {
+        margin-top: -0.5rem; 
+    }
+
+    .luxbar-hamburger span::after {
+        margin-top: 0.5rem; 
+    }
+
+    #luxbar-checkbox:checked ~ .luxbar-hamburger-doublespin span::before {
+        transform: rotate(225deg); 
+    }
+
+    #luxbar-checkbox:checked ~ .luxbar-hamburger-doublespin span::after {
+        transform: rotate(-225deg); 
+    }
+
+    #luxbar-checkbox:checked ~ .luxbar-hamburger-spin span::before {
+        transform: rotate(45deg); 
+    }
+
+    #luxbar-checkbox:checked ~ .luxbar-hamburger-spin span::after {
+        transform: rotate(-45deg); 
+    }
+
+    .luxbar-hamburger span,
+    .luxbar-hamburger span::before,
+    .luxbar-hamburger span::after {
+        background-color: $theme-cyan-fg; 
+    }
+
+    .luxbar-items {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        z-index: -1;
+        position: relative;
+    }
+
+    .luxbar-items > li {
+        position: absolute;
+        background-color: inherit;
+        height: auto;
+        top: - $nav-height;
+        transition: top 0.35s ease-in-out;
+        width: 100%;
+    }
+
+    .luxbar-items > li a {
+        background-color: inherit;
+        height: $nav-height;
+    }
+
+    .luxbar-items > li:nth-child(1){
+        z-index: -1;
+    }
+
+    .luxbar-items > li:nth-child(2) {
+        z-index: -2;
+    }
+
+    .luxbar-items > li:nth-child(3) {
+        z-index: -3;
+    }
+
+    .luxbar-items > li:nth-child(4) {
+        z-index: -4;
+    }
+
+    #luxbar-checkbox:checked ~ .luxbar-items > li:nth-child(1) {
+        top: 0;
+    }
+
+    #luxbar-checkbox:checked ~ .luxbar-items > li:nth-child(2) {
+        top: #{$nav-height * 1};
+    }
+
+    #luxbar-checkbox:checked ~ .luxbar-items > li:nth-child(3) {
+        top: #{$nav-height * 2};
+    }
+
+    #luxbar-checkbox:checked ~ .luxbar-items > li:nth-child(4) {
+        top: #{$nav-height * 3};
+    }
+
+    #luxbar-checkbox:checked ~ .luxbar-items > li:nth-child(5) {
+        top: #{$nav-height * 4};
+    }
+
+}

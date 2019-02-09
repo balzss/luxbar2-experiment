@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-
 import './luxbar.scss';
 
 class App extends React.Component {
