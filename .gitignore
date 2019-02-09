@@ -1,5 +1,5 @@
 node_modules
-homepage/build/
+homepage/build
 
 # misc
 .DS_Store
