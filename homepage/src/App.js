@@ -5,18 +5,64 @@ import './luxbar.scss';
 class App extends React.Component {
     constructor() {
         super();
+
+        this.checkboxes = [
+            {
+                name: 'fixed',
+                default: false,
+                display: 'Fixed to top'
+            },
+            {
+                name: 'showBrand',
+                default: true,
+                display: 'Show brand label'
+            },
+            {
+                name: 'shadow',
+                default: true,
+                display: 'Display box-shadow'
+            },
+            {
+                name: 'showBrand',
+                default: true,
+                display: 'Show brand label'
+            },
+            {
+                name: 'showBrand',
+                default: true,
+                display: 'Show brand label'
+            },
+        ]
+
         this.state = {
-            fixed: false
+            fixed: false,
+            showBrand: true,
+            shadow: true,
+            mobileView: true,
+            evenItems: false
         }
     }
-    changeFixed = e => {
-        this.setState({fixed: !this.state.fixed});
+
+    handleCheckboxChange = e => {
+        this.setState({[e.target.name]: e.target.checked});
     }
+
+    renderCheckboxes = checkboxes => {
+        return checkboxes.map(box => {
+            return (<div key={box.name}>
+                <input type="checkbox" name={box.name} checked={this.state[box.name]} onChange={this.handleCheckboxChange} />
+                {box.display}: {this.state[box.name] ? 'Yes' : 'No'}
+            </div>);
+        });
+    }
+
     render() {
+        const luxbarClasses =  `luxbar ${this.state.fixed ? 'luxbar-fixed' : ''} ${this.state.shadow ? 'luxbar-shadow1' : ''}`;
         return (
             <div className="App">
 
-                <nav className={ 'luxbar luxbar-shadow1' + (this.state.fixed ? ' luxbar-fixed' : '') }>
+                <nav className={luxbarClasses}>
+                    {this.state.showBrand && <a className="luxbar-brand" href="/">Luxbar Brand</a>}
                     <input type="checkbox" id="luxbar-checkbox"/>
                     <label className="luxbar-hamburger luxbar-hamburger-doublespin" 
                         htmlFor="luxbar-checkbox"> <span></span> </label>
