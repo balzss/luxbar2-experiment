@@ -30,7 +30,11 @@ class App extends React.Component {
                     </ul>
                 </nav>
 
-                <input type="checkbox" checked={this.state.fixed} onChange={this.changeFixed} style={{marginTop: this.state.fixed ? '88px' : '32px'}}/> Fixed to top: {this.state.fixed ? 'Yes' : 'No'}
+                <div style={{marginTop: this.state.fixed ? '88px' : '32px'}} >
+                    {this.renderCheckboxes(this.checkboxes)}
+                </div>
+
+                <hr/>
                 <p> Dolor tempora ut quisquam ab dolore Explicabo voluptates nihil temporibus tempora laboriosam. Ipsa eos neque ratione cumque deserunt? Deleniti repudiandae quas consequatur excepturi velit eligendi reiciendis, dolores Sit quod praesentium  Dolor tempora ut quisquam ab dolore Explicabo voluptates nihil temporibus tempora laboriosam. Ipsa eos neque ratione cumque deserunt? Deleniti repudiandae quas consequatur excepturi velit eligendi reiciendis, dolores Sit quod praesentium </p>
                 <p> Dolor tempora ut quisquam ab dolore Explicabo voluptates nihil temporibus tempora laboriosam. Ipsa eos neque ratione cumque deserunt? Deleniti repudiandae quas consequatur excepturi velit eligendi reiciendis, dolores Sit quod praesentium  Dolor tempora ut quisquam ab dolore Explicabo voluptates nihil temporibus tempora laboriosam. Ipsa eos neque ratione cumque deserunt? Deleniti repudiandae quas consequatur excepturi velit eligendi reiciendis, dolores Sit quod praesentium </p>
                 <p> Dolor tempora ut quisquam ab dolore Explicabo voluptates nihil temporibus tempora laboriosam. Ipsa eos neque ratione cumque deserunt? Deleniti repudiandae quas consequatur excepturi velit eligendi reiciendis, dolores Sit quod praesentium  Dolor tempora ut quisquam ab dolore Explicabo voluptates nihil temporibus tempora laboriosam. Ipsa eos neque ratione cumque deserunt? Deleniti repudiandae quas consequatur excepturi velit eligendi reiciendis, dolores Sit quod praesentium </p>
